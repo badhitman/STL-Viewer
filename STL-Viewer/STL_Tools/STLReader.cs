@@ -297,9 +297,9 @@ namespace STL_Tools
                         try
                         {
                             // FaceNormal 
-                            newMesh.normal1.x = float.Parse(lineData[2]);
-                            newMesh.normal1.y = float.Parse(lineData[3]);
-                            newMesh.normal1.z = float.Parse(lineData[4]);
+                            newMesh.normal1.x = string.IsNullOrEmpty(lineData[2]) ? 0 : float.Parse(lineData[2]);
+                            newMesh.normal1.y = string.IsNullOrEmpty(lineData[3]) ? 0 : float.Parse(lineData[3]);
+                            newMesh.normal1.z = string.IsNullOrEmpty(lineData[4]) ? 0 : float.Parse(lineData[4]);
 
                             /* normals of vertex 2 and 3 equals to vertex 1's normals */
                             newMesh.normal2 = newMesh.normal1;
